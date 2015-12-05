@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>three.js webgl - loaders - OBJ MTL loader</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        
+
+        <!-- jQuery -->
+        <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" rel="Stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+        <!-- Three.js js files -->
+        <script src="js/three.min.js"></script>
+        <script src="js/loaders/DDSLoader.js"></script>
+        <script src="js/loaders/MTLLoader.js"></script>
+        <script src="js/loaders/OBJMTLLoader.js"></script>
+        <script src="js/Detector.js"></script>
+        <script src="js/libs/stats.min.js"></script>
+       
+        
+    </head>
+
+    <body>
+
+        
+        
+      <div id="btnContainer" style="z-index: 3; top:0px; left: 50px" >
+
+            <button id="home" class="ui-icon ui-icon-home"  style="position: fixed; width: 20px; height: 20px; z-index: 3; left: 32px; top: 84px;">
+                
+            </button>
+
+             <button id="top" class="ui-icon ui-icon-triangle-1-n"  style="position: fixed; width: 20px; height: 20px; z-index: 3; left: 32px; top: 60px;">
+                
+            </button>
+
+             <button id="left" class="ui-icon ui-icon-triangle-1-w"  style="position: fixed; width: 20px; height: 20px; z-index: 3; left: 8px; top: 84px;">
+                
+            </button>
+
+             <button id="right" class="ui-icon ui-icon-triangle-1-e"  style="position: fixed; width: 20px; height: 20px; z-index: 3; left: 56px; top: 84px;">
+                
+            </button>
+
+             <button id="bottom" class="ui-icon ui-icon ui-icon-triangle-1-s"  style="position: fixed; width: 20px; height: 20px; z-index: 3; left: 32px; top: 108px;">
+                
+            </button>
+
+             <button id="plus" class="ui-icon ui-icon ui-icon-plus"  style="position: fixed; width: 20px; height: 20px; z-index: 3; left: 32px; top: 164px;">
+                
+            </button>
+
+             <button id="minus" class="ui-icon ui-icon-minus"  style="position: fixed; width: 20px; height: 20px; z-index: 3; left: 32px; top: 186px;">
+                
+            </button>
+            
+
+             <div id="slider" class=" ui-slider ui-slider-vertical" style="position: fixed; top: 230px; left:32px; z-index: 4"> </div>
+        </div>
+
+        <div id="modelContainer">
+               
+        </div> 
+       
+
+         <script type="text/javascript" src="js/custom.js"> </script>
+          <script type="text/javascript">
+
+            
+
+             $(function() {
+
+                $( "#slider" ).slider({
+                        animate: "fast",
+                        orientation: "vertical",
+                        min: 0
+                    });
+
+                $( "button" ).button().click(function(){
+
+                onMoveControls.call(this);
+            });
+              });
+           </script>
+        
+    </body>
+</html>

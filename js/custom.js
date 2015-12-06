@@ -44,7 +44,6 @@ animate();
 
 function init() {
 
-   console.log("new");
     container = document.createElement( 'div' );
     document.getElementById("modelContainer").appendChild( container );
 
@@ -87,16 +86,16 @@ function init() {
     loader.load( 'obj/internal_skeleton/skelet.obj', 'obj/internal_skeleton/skelet.mtl', function ( object ) {
 
         model=object;
-        object.position.y=-70;
+        object.position.y=-50;
 
         initalRotationX=object.rotation.x;
         initalRotationY=object.rotation.y;
         initalPostionX=object.position.x;
         initalPostionY=object.position.y;
 
-        object.scale.x=2;
-        object.scale.y=2;
-        object.scale.z=2;
+        object.scale.x=1.5;
+        object.scale.y=1.5;
+        object.scale.z=1.5;
 
         scene.add( object );
 
@@ -133,10 +132,11 @@ function init() {
     renderer = new THREE.WebGLRenderer();
     var DPR = (window.devicePixelRatio) ? window.devicePixelRatio : 1;
     var WW = window.innerWidth;
-    var HH = window.innerHeight;
+    var HH = window.innerHeight-60;
+    console.log("HH"+window.innerHeight+";;;;"+ (HH-60));
     renderer.setSize( WW, HH ); 
 
-    renderer.setViewport( (WW-WW*DPR)/2, (HH-HH*DPR)/2, WW*DPR, HH*DPR );
+    renderer.setViewport( (WW-WW*DPR)/2, (HH-HH*DPR)/2, WW, HH);
     renderer.setClearColor( 0xcccccc);
 
     container.appendChild( renderer.domElement );
@@ -279,7 +279,7 @@ function onMoveControls(){
             break;
 
         case "home":
-            transparencyHandler();
+            resetObject();
             break;
 
      }
@@ -327,7 +327,7 @@ function calculateMovementY(myFlag){
 }
 
 
-function transparencyHandler(){
+function resetObject(){
 
        
         model.rotation.x= initalRotationX;
@@ -337,9 +337,9 @@ function transparencyHandler(){
         model.position.x=initalPostionX;
         model.position.y=initalPostionY;
 
-        model.scale.x=2;
-        model.scale.y=2;
-        model.scale.z=2;
+        model.scale.x=1.5;
+        model.scale.y=1.5;
+        model.scale.z=1.5;
 
 }
 
